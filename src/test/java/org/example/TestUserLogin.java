@@ -4,11 +4,11 @@ import com.github.javafaker.Faker;
 import dto.User;
 import dto.UserLogin;
 import dto.response.CreateUserResponse;
+import io.qameta.allure.junit4.DisplayName;
 import org.apache.http.entity.ContentType;
 import org.example.generaleforuser.BaseApi;
 import org.hamcrest.MatcherAssert;
 import org.junit.Test;
-import org.junit.jupiter.api.DisplayName;
 
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;

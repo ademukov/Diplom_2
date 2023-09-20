@@ -7,7 +7,7 @@ import org.example.generaleforuser.UserLoginByApi;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import org.junit.jupiter.api.DisplayName;
+import io.qameta.allure.junit4.DisplayName;
 
 import java.util.List;
 import java.util.stream.Collectors;
