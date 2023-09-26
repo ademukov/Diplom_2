@@ -53,7 +53,7 @@ public class TestChangeUserData extends BaseApi {
         user2 = new User(faker.internet().emailAddress(), faker.internet().password(), faker.name().firstName());
         UserLogin createUserForLoginCheck = new UserLogin(user.getEmail(), user.getPassword(), user.getName());//создаем объект для создания пользователя
         //создаем пользователя
-        var response = given()
+        given()
                 .contentType(ContentType.APPLICATION_JSON.getMimeType()) // заполнили header
                 .body(createUserForLoginCheck)
                 .post("/api/auth/register")
@@ -110,7 +110,7 @@ public class TestChangeUserData extends BaseApi {
         user2 = new User(faker.internet().emailAddress(), faker.internet().password(), faker.name().firstName());
         UserLogin createUserForLoginCheck = new UserLogin(user.getEmail(), user.getPassword(), user.getName());//создаем объект для создания пользователя
         //создаем пользователя
-        var response = given()
+        given()
                 .contentType(ContentType.APPLICATION_JSON.getMimeType()) // заполнили header
                 .body(createUserForLoginCheck)
                 .post("/api/auth/register")

@@ -37,7 +37,7 @@ public class TestUserLogin extends BaseApi {
         MatcherAssert.assertThat(response.getUser(), notNullValue());
 
         UserLogin loginUserForLoginCheck = new UserLogin(user2.getEmail(), user.getPassword(), null);//создаем объект для логина пользователя
-        var response2 = given()
+        given()
                 .contentType(ContentType.APPLICATION_JSON.getMimeType()) // заполнили header
                 .body(loginUserForLoginCheck)
                 .post("/api/auth/login")
@@ -66,7 +66,7 @@ public class TestUserLogin extends BaseApi {
         MatcherAssert.assertThat(response.getUser(), notNullValue());
 
         UserLogin loginUserForLoginCheck = new UserLogin(user.getEmail(), user2.getPassword(), null);//создаем объект для логина пользователя
-        var response2 = given()
+        given()
                 .contentType(ContentType.APPLICATION_JSON.getMimeType()) // заполнили header
                 .body(loginUserForLoginCheck)
                 .post("/api/auth/login")

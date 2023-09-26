@@ -63,7 +63,7 @@ public class TestOrderCreate extends UserLoginByApi {
         Ingredient firstIngredient = ingredients.stream()
                 .findFirst()
                 .orElseThrow();
-        Ingredient randomIngredient = ingredients.stream()
+        ingredients.stream()
                 .skip(new Random().nextInt(ingredients.size() - 1))
                 .findFirst()
                 .orElseThrow();
@@ -129,7 +129,7 @@ public class TestOrderCreate extends UserLoginByApi {
         Ingredient firstIngredient = ingredients.stream()
                 .findFirst()
                 .orElseThrow();
-        Ingredient randomIngredient = ingredients.stream()
+        ingredients.stream()
                 .skip(new Random().nextInt(ingredients.size() - 1))
                 .findFirst()
                 .orElseThrow();

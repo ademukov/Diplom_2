@@ -34,7 +34,7 @@ public class TestUserCreate extends BaseApi {
         MatcherAssert.assertThat(response.getUser(), notNullValue());
 
         UserLogin loginUserForLoginCheck = new UserLogin(user.getEmail(), user.getPassword(), null);//создаем объект для логина пользователя
-        var response2 = given()
+        given()
                 .contentType(ContentType.APPLICATION_JSON.getMimeType()) // заполнили header
                 .body(loginUserForLoginCheck)
                 .post("/api/auth/login")
@@ -79,7 +79,7 @@ public class TestUserCreate extends BaseApi {
         user = new User(faker.internet().emailAddress(), null, faker.name().firstName());
         UserLogin createUserForLoginCheck = new UserLogin(user.getEmail(), user.getPassword(), user.getName());//создаем объект для создания пользователя
         //создаем пользователя
-        var response = given()
+        given()
                 .contentType(ContentType.APPLICATION_JSON.getMimeType()) // заполнили header
                 .body(createUserForLoginCheck)
                 .post("/api/auth/register")
@@ -98,7 +98,7 @@ public class TestUserCreate extends BaseApi {
         user = new User(null, faker.internet().password(), faker.name().firstName());
         UserLogin createUserForLoginCheck = new UserLogin(user.getEmail(), user.getPassword(), user.getName());//создаем объект для создания пользователя
         //создаем пользователя
-        var response = given()
+        given()
                 .contentType(ContentType.APPLICATION_JSON.getMimeType()) // заполнили header
                 .body(createUserForLoginCheck)
                 .post("/api/auth/register")
@@ -117,7 +117,7 @@ public class TestUserCreate extends BaseApi {
         user = new User(faker.internet().emailAddress(), faker.internet().password(), null);
         UserLogin createUserForLoginCheck = new UserLogin(user.getEmail(), user.getPassword(), user.getName());//создаем объект для создания пользователя
         //создаем пользователя
-        var response = given()
+        given()
                 .contentType(ContentType.APPLICATION_JSON.getMimeType()) // заполнили header
                 .body(createUserForLoginCheck)
                 .post("/api/auth/register")
